@@ -12,13 +12,13 @@ const ContactForm = ({ addContact, contacts }) => {
   const validationSchema = Yup.object().shape({
     name: Yup.string()
       .min(2, "Too short!")
-      .max(30, "User name must be less than 30 characters!")
+      .max(38, "Too long!")
       .required("Name is required")
       .test("uniqueName", "Name already exists", (value) => {
         return !contacts.some((contact) => contact.name === value);
       }),
     number: Yup.string()
-      .min(3, "Phonenumber must be at least 3 characters!")
+      .min(3, "Too short!")
       .required("Number is required"),
   });
   const handleSubmit = (values, { resetForm }) => {
@@ -39,7 +39,7 @@ const ContactForm = ({ addContact, contacts }) => {
               className={css.field}
               type="text"
               name="name"
-              placeholder="John Smith"
+              placeholder="IVAN IVANOV"
             />
             <ErrorMessage
               className={css.formError}
