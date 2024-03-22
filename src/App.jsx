@@ -34,14 +34,15 @@ function App() {
   );
 
   return (
-    <div  className={css.appContainer}>
-      <h1>Phonebook</h1>
+    <div>
+     <div className={css.appContainer}> <h1>Phonebook</h1>
       <ContactForm 
         addContact={addContact} contacts={contacts} />
       <SearchBox
         searchContact={searchContact}
         setSearchContact={setSearchContact}
-      />
+        />
+        </div>
       <ContactList contacts={filteredContacts} deleteContact={deleteContact} />
     </div>
   );
